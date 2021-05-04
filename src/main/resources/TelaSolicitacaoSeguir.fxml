@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0"
+	prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="main.java.controller.TelaSolicitacaoSeguirController">
+	<children>
+		<ImageView fitHeight="67.0" fitWidth="706.0" layoutX="-3.0"
+			pickOnBounds="true">
+			<image>
+				<Image url="@imagens/banner.jpeg" />
+			</image>
+		</ImageView>
+		<ImageView fitHeight="74.0" fitWidth="706.0" layoutX="-3.0"
+			layoutY="476.0" pickOnBounds="true">
+			<image>
+				<Image url="@imagens/banner.jpeg" />
+			</image>
+		</ImageView>
+		<AnchorPane layoutX="38.0" layoutY="480.0"
+			prefHeight="67.0" prefWidth="109.0">
+			<cursor>
+				<Cursor fx:constant="HAND" />
+			</cursor>
+			<children>
+				<Label layoutX="9.0" layoutY="45.0" text="ares-it.com.br"
+					textFill="WHITE" />
+				<ImageView fitHeight="39.0" fitWidth="53.0" layoutX="36.0"
+					pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@imagens/ares.png" />
+					</image>
+				</ImageView>
+			</children>
+		</AnchorPane>
+		<Label layoutX="30.0" layoutY="101.0"
+			text="Adicionar Pessoas com Palavra Chave:">
+			<font>
+				<Font size="15.0" />
+			</font>
+		</Label>
+		<Label layoutX="166.0" layoutY="24.0"
+			text="Detalhes de Solicitação" textFill="WHITE">
+			<font>
+				<Font size="28.0" />
+			</font>
+		</Label>
+		<Line endX="13.0" endY="217.0" layoutX="339.0" layoutY="243.0"
+			startX="13.0" startY="-155.0" stroke="#e00b52" strokeWidth="3.0" />
+		<Label layoutX="30.0" layoutY="244.0"
+			text="Lista de Palavras Chave">
+			<font>
+				<Font size="15.0" />
+			</font>
+		</Label>
+		<Button fx:id="btnIniciarAutomacao" defaultButton="true"
+			layoutX="421.0" layoutY="384.0" mnemonicParsing="false"
+			onAction="#iniciarAutomacao" prefHeight="39.0" prefWidth="190.0"
+			style="-fx-background-color: #e00b52; -fx-background-radius: 25px; -fx-border-radius: 2px;"
+			text="Iniciar Automação" textFill="WHITE">
+			<font>
+				<Font size="17.0" />
+			</font>
+		</Button>
+		<Button fx:id="btnAdicionar" defaultButton="true"
+			layoutX="40.0" layoutY="178.0" mnemonicParsing="false"
+			onAction="#adicionarNaLista" prefHeight="35.0" prefWidth="104.0"
+			style="-fx-background-color: #e00b52; -fx-background-radius: 25px; -fx-border-radius: 2px;"
+			text="Adicionar" textFill="WHITE" />
+		<Button fx:id="btnRemover" defaultButton="true" layoutX="166.0"
+			layoutY="178.0" mnemonicParsing="false" onAction="#removerDaLista"
+			prefHeight="35.0" prefWidth="104.0"
+			style="-fx-background-color: ffffff; -fx-background-radius: 25px; -fx-border-radius: 25px; -fx-border-color: e00b52;"
+			text="Remover" textFill="#e00b52" />
+		<ListView fx:id="listaPalavras" layoutX="30.0"
+			layoutY="278.0" prefHeight="180.0" prefWidth="290.0" />
+		<Label layoutX="376.0" layoutY="101.0"
+			text="Digite uma mensagem personalizada">
+			<font>
+				<Font size="15.0" />
+			</font>
+		</Label>
+		<TextArea fx:id="txtAreaMensagem" layoutX="376.0"
+			layoutY="135.0" prefHeight="161.0" prefWidth="290.0" wrapText="true" />
+		<Button fx:id="btnPararAutomacao" defaultButton="true"
+			layoutX="421.0" layoutY="429.0" mnemonicParsing="false"
+			onAction="#pararAutomacao" prefHeight="35.0" prefWidth="190.0"
+			style="-fx-background-color: ffffff; -fx-background-radius: 25px; -fx-border-radius: 25px; -fx-border-color: e00b52;"
+			text="Parar Automação" textFill="#e00b52">
+			<font>
+				<Font size="17.0" />
+			</font>
+		</Button>
+		<Pane layoutX="376.0" layoutY="309.0" prefHeight="67.0"
+			prefWidth="290.0" style="-fx-border-color: #808080;">
+			<children>
+				<Label layoutX="6.0" layoutY="1.0" prefHeight="26.0"
+					prefWidth="165.0" text="Status da Automação: " />
+				<Label fx:id="lblLog" layoutX="6.0" layoutY="26.0"
+					prefHeight="16.0" prefWidth="290.0" text="A iniciar..." />
+			</children>
+		</Pane>
+		<TextField fx:id="txtPalavra" layoutX="35.0" layoutY="135.0"
+			prefHeight="26.0" prefWidth="290.0" />
+	</children>
+</Pane>
